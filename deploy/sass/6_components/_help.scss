@@ -1,0 +1,65 @@
+.help {
+    @include flexbox(row, wrap, center, center, center);
+    background-image: url("https://digitalcommerce.rakuten.com.br/wp-content/developers_files/bgfooter.jpg");
+    background-position: center 63px;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+    min-height: 375px;
+    overflow: hidden;
+
+    p{
+        width: 100%;
+    }
+
+    .wrapper {
+        @include flexbox(row, wrap, space-between, flex-start, center);
+
+        height: 100%;
+        text-align: center;
+    }
+
+    @include e("title") {
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include fonte($second-font, bold, 42px, #FFF);
+
+        width: 100%;
+
+        &:after {
+            content: "";
+            margin: 12px 0px;
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #FFF;
+        }
+    }
+
+
+    @include e("text") {
+        @include fonte($second-font, 400, 16px, #FFF);
+
+        display: block;
+        margin: 20px auto;
+    }
+
+
+    @include e("link") {
+        @include flexbox(row, wrap, center, center, center);
+        @include fonte($second-font, 400, 16px, #000);
+        @include border-radius(30px);
+
+        background-color: #FFF;
+        width: 100%;
+        max-width: 240px;
+        height: 45px;
+        text-align: center;
+        margin: 12px auto;
+
+        &:after {
+            @include set-icon($fa-var-caret-right, 20px, 900, #000);
+            margin-left: 10px;
+        }
+    }
+}

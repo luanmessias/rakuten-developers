@@ -1,0 +1,16 @@
+.footer{
+    
+    .wrapper {
+        @include flexbox(row, wrap, center, center, center);
+
+        height: 100%;
+        text-align: center;
+    }
+
+    @include e('text'){
+        @include fonte($second-font, bold, 14px, #444e54);
+        display: block;
+        margin: 30px auto;
+    }
+
+}

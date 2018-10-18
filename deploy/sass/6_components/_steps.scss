@@ -1,0 +1,60 @@
+.steps{
+    .wrapper{
+        @include flexbox(row, wrap, space-between, inherit, center);
+    }
+
+    @include e('title'){
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include fonte($second-font, bold, 34px, #273238);
+        width: 100%;
+        &:after{
+            content: "";
+            margin: 12px 0px;
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #bf0000;
+        }
+    }
+
+    .step{
+        @include flexbox(row, wrap, flex-start, center, center);
+        
+        @include e('number'){
+            @include flexbox(column, wrap, center, center, center);
+            @include fonte($second-font, bold, 20px, #FFF);
+            @include border-radius(100px);
+            width: 60px;
+            height: 60px;
+            background-color: #273238;
+            @media #{$res-xs}, #{$res-sm} {
+                width: 100px;
+                height: 100px;
+                font-size: 30px;
+                margin: 0px auto;
+            }
+            
+        }
+
+        @include e('title'){
+            @include fonte($second-font, bold, 20px, #273238);
+            margin-top: 0px;
+            margin-bottom: 5px;
+            @media #{$res-xs}, #{$res-sm} {
+               text-align: center;
+            }
+        }
+
+        @include e('text'){
+            @include fonte($second-font, 400, 14px, #273238);
+            width: 100%;
+            display: block;
+            @media #{$res-xs}, #{$res-sm} {
+               text-align: center;
+            }
+        }
+        
+    }
+
+
+}

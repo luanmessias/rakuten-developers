@@ -2,7 +2,7 @@
 
     .header{
         @include flexbox(row, wrap, center, center, center);
-        background-image: url('../../dist/img/bgheader.jpg');
+        background-image: url('https://digitalcommerce.rakuten.com.br/wp-content/developers_files/bgheader.jpg');
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -12,7 +12,7 @@
         overflow: hidden;
 
         .wrapper{
-            @include flexbox(row, wrap, space-between, flex-start, center);
+            @include flexbox(row, wrap, space-between, center, center);
             height: 100%;
         }
 
