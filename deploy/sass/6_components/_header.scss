@@ -1,8 +1,8 @@
-.developers{
-
-    .header{
+.developers {
+    .header {
         @include flexbox(row, wrap, center, center, center);
-        background-image: url('https://digitalcommerce.rakuten.com.br/wp-content/developers_files/bgheader.jpg');
+
+        background-image: url("https://digitalcommerce.rakuten.com.br/wp-content/developers_files/bgheader.jpg");
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -11,116 +11,137 @@
         min-height: 750px;
         overflow: hidden;
 
-        .wrapper{
+        .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
             height: 100%;
         }
 
-        @include e('logo'){
+        @include e("logo") {
             @include animate(fadeInLeft, 0s);
             @include transition;
+
             margin-bottom: 30px;
 
             @media #{$res-xs}, #{$res-sm} {
                 margin-top: 30px;
-                img{
+
+                img {
                     @include box-sizing;
+
                     width: 100%;
                 }
             }
         }
 
-        @include e('title'){
-            @include animate(fadeInLeft, .5s);
+
+        @include e("title") {
+            @include animate(fadeInLeft, 0.5s);
             @include transition;
             @include fonte($second-font, bold, 40px, #FFF);
+
             margin-bottom: 30px;
+
             @media #{$res-xs}, #{$res-sm} {
                 font-size: 28px;
             }
         }
 
-        @include e('desc'){
-            @include animate(fadeInLeft, .6s);
+
+        @include e("desc") {
+            @include animate(fadeInLeft, 0.6s);
             @include fonte($second-font, normal, 18px, #FFF);
         }
 
-        @include e('arrow'){
+
+        @include e("arrow") {
             font-size: 50px;
             color: #FFF;
             margin: 20px auto;
             display: block;
             text-align: center;
         }
-
     }
 
-    .login{
+    .login {
         @include animate(fadeInRight, 1s);
         @include box-sizing;
         @include border-radius(10px);
-        border: 2px solid #FFF;
+        border: 1px solid #FFF;
         padding: 15px;
 
-        @include e('header'){
-            @include fonte($second-font, bold, 18px, #FFF);
+        @include e("header") {
+            @include fonte($second-font, normal, 26px, #FFF);
             @include box-sizing;
             width: 100%;
             text-align: center;
             margin-bottom: 15px;
-            border-bottom: 2px solid #FFF;
-            &:before{
-                @include set-icon($fa-var-user, 30px, 900, #FFF);
-                display: block;
-                margin: 5px auto;
-            }
+            border-bottom: 1px solid #FFF;
             padding-bottom: 15px;
-
         }
 
-        @include e('option'){
-            @include flexbox(row, wrap, space-between, center, center);
+
+        @include e("option") {
+            @include flexbox(column, nowrap, space-between, center, center);
             @include border-radius(10px);
             @include transition;
             border: 0px solid #FFF;
-            height: 50px;
-            margin: 50px 0px;
-            padding-right: 20px;
-            //background-color: rgba(0, 0, 0, 0.212);
-            @include e('title'){
-                @include flexbox(row, nowrap, center, center, center);
-                @include fonte($second-font, bold, 14px, rgb(51, 51, 51));
+            padding: 20px 0px;
+
+            @include e("title") {
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, bold, 32px, #FFF);
                 @include box-sizing;
                 @include border-radius(5px);
                 @include transition;
                 height: 100%;
+                width: 100%;
                 text-align: left;
-                background-color: #FFF;
                 width: auto;
                 min-width: 30%;
-                @media #{$res-xs}{
+                &:before {
+                    @include set-icon($fa-var-user, 30px, 900, #FFF);
+
+                    margin-right: 15px;
+                }
+
+                @media #{$res-xs} {
                     width: 100%;
                     margin-bottom: 15px;
                 }
-            }  
-            
-            @include e('link'){
-                @include flexbox(row, nowrap, space-between, center, center);
-                @include fonte($second-font, 400, 14px, #FFF);
-                &:after{
+            }
+
+
+            @include e("link") {
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, bold, 17px, #FFF);
+                @include border-radius(50px);
+                @include box-sizing;
+                //@include transition;
+                text-align: center;
+                border: 1px solid #FFF;
+                width: 100%;
+                max-width: 200px;
+                height: 40px;
+                margin: 15px 0px;
+
+                &:after {
                     @include set-icon($fa-var-chevron-right, 14px, 900, #FFF);
-                   margin-left: 5px;
+                    margin-left: 5px;
                 }
+
+                &:hover{
+                    background-color: #bf0000;
+                    border-color: #bf0000;
+                }
+                
             }
         }
 
-        @include e('sep'){
+
+        @include e("sep") {
             width: 100%;
-            height: 2px;
+            height: 1px;
             background-color: #FFF;
         }
-
-
     }
-
 }
