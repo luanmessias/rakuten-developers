@@ -54,11 +54,15 @@
 
 
         @include e("arrow") {
+            @include animate(fadeInDown, 1s);
             font-size: 50px;
             color: #FFF;
             margin: 20px auto;
             display: block;
             text-align: center;
+            &:before{
+                
+            }
         }
     }
 
